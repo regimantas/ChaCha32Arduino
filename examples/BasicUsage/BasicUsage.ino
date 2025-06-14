@@ -30,6 +30,14 @@ void setup() {
 
   Serial.println("Decrypted:");
   Serial.println((char*)decrypted);
+
+  Serial.println("Encrypted:");
+  for (size_t i = 0; i < sizeof(plaintext); i++) {
+    if (ciphertext[i] < 16) Serial.print("0");
+    Serial.print(ciphertext[i], HEX);
+    Serial.print(" ");
+  }
+  Serial.println();
 }
 
 void loop() {}
