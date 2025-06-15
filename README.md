@@ -13,12 +13,6 @@ This library is optimized for embedded devices, and provides basic encryption/de
 - Identical API behavior across platforms (Arduino, C, Go, Nim)
 - Small footprint, suitable for MCUs with limited flash/RAM
 
-## File Structure
-
-- `src/ChaCha32.h` – Public API header
-- `src/ChaCha32.cpp` – Internal implementation
-- `examples/BasicUsage/BasicUsage.ino` – Example showing how to encrypt and decrypt strings
-
 ## Usage Example
 
 ```cpp
@@ -55,6 +49,32 @@ void setup() {
 }
 
 void loop() {}
+```
+
+## Compatible Go Library
+
+This Arduino library is fully compatible with the following Golang implementation:  
+➡️ [github.com/regimantas/chacha32go](https://github.com/regimantas/chacha32go)
+
+The Go version produces **identical output** given the same key, nonce, and plaintext.
+
+```go
+import (
+    "fmt"
+    "github.com/regimantas/chacha32go"
+)
+
+func main() {
+    key := make([]byte, 32)
+    nonce := make([]byte, 12)
+    message := []byte("Secret message")
+
+    encrypted, _ := chacha32go.Encrypt(key, nonce, message)
+    decrypted, _ := chacha32go.Decrypt(key, nonce, encrypted)
+
+    fmt.Println("Original:", string(message))
+    fmt.Println("Decrypted:", string(decrypted))
+}
 ```
 
 ## Security Notes
