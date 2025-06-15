@@ -1,6 +1,6 @@
 # ChaCha32 Arduino Library
 
-ChaCha32 is a lightweight, Arduino-compatible implementation of the [ChaCha](https://cr.yp.to/chacha/chacha-20080128.pdf) stream cipher algorithm, extended to use **32 rounds** instead of the standard 20 for increased cryptographic strength.
+ChaCha32 is a lightweight, Arduino-compatible implementation of the [ChaCha](https://cr.yp.to/chacha/chacha-20080128.pdf) stream Encryption algorithm, extended to use **32 rounds** instead of the standard 20 for increased cryptographic strength.
 
 This library is optimized for embedded devices, and provides basic encryption/decryption using a 32-byte (256-bit) key and a 12-byte (96-bit) nonce.
 
